@@ -10,7 +10,7 @@ window.HC_CONFIG = {
   SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmY2dhbWRscm12YmZ6cGdtdGJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDI2NzEsImV4cCI6MjA4OTA3ODY3MX0.9Ku4UqF7vx89CT0DcpbjPv5-ZH3cSb8j3elCqMOwFZ0',
 
   // ── BACKEND ───────────────────────────────────────────────────────
-  IS_LOCAL:        false,
+  IS_LOCAL:        true,
   BASE_URL_LOCAL:  'http://localhost:5000',
   BASE_URL_DEPLOY: 'https://hackandcrack.onrender.com',
 
