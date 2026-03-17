@@ -20,23 +20,23 @@
     ]
   },
   "Q3": {
-    "title": "Square of a Number",
-    "description": "Read a number N using 🎤 and print its square.\n\nExample:\nInput:\n4\n\nOutput:\n16",
-    "expected": "16",
+    "title": "Missing Number",
+    "description": "Read N using 🎤, then read N numbers. The numbers are from 1 to N+1 but exactly one is missing. Find and print the missing number.\n\nTip: Expected sum of 1 to N+1 is (N+1)*(N+2)/2. Subtract actual sum.\n\nExample:\nInput:  4\n        1\n        2\n        4\n        5\nOutput: 3",
+    "expected": "3",
     "test_cases": [
-      { "input": "4", "expected": "16" },
-      { "input": "5", "expected": "25" },
-      { "input": "10", "expected": "100" }
+      { "input": "4\n1\n2\n4\n5",    "expected": "3" },
+      { "input": "5\n1\n2\n3\n4\n6", "expected": "5" },
+      { "input": "3\n2\n3\n4",        "expected": "1" }
     ]
   },
   "Q4": {
-    "title": "Number Type",
-    "description": "Read a number N using 🎤.\nPrint:\n\"Positive\" if N > 0\n\"Negative\" if N < 0\n\"Zero\" if N == 0\n\nExample:\nInput:\n-5\n\nOutput:\nNegative",
-    "expected": "Negative",
+    "title": "Count Even Numbers",
+    "description": "Read N using 🎤, then read N numbers. Print the count of even numbers.\n\nExample:\nInput:  6\n        1\n        2\n        3\n        4\n        5\n        6\nOutput: 3",
+    "expected": "3",
     "test_cases": [
-      { "input": "-5", "expected": "Negative" },
-      { "input": "10", "expected": "Positive" },
-      { "input": "0", "expected": "Zero" }
+      { "input": "6\n1\n2\n3\n4\n5\n6", "expected": "3" },
+      { "input": "4\n2\n4\n6\n8",        "expected": "4" },
+      { "input": "5\n1\n3\n5\n7\n9",     "expected": "0" }
     ]
   },
   "Q5": {
@@ -60,13 +60,13 @@
     ]
   },
  "Q7": {
-    "title": "Multiply by 2",
-    "description": "Read a number N using 🎤 and print N * 2.\n\nExample:\nInput:\n6\n\nOutput:\n12",
-    "expected": "12",
+    "title": "Find Maximum",
+    "description": "Read N using 🎤, then read N numbers. Print the maximum value.\n\nTip: Use 🔺 to find max of a list\n\nExample:\nInput:  5\n        3\n        8\n        2\n        7\n        5\nOutput: 8",
+    "expected": "8",
     "test_cases": [
-      { "input": "6", "expected": "12" },
-      { "input": "3", "expected": "6" },
-      { "input": "10", "expected": "20" }
+      { "input": "5\n3\n8\n2\n7\n5",  "expected": "8"   },
+      { "input": "4\n10\n40\n20\n30", "expected": "40"  },
+      { "input": "3\n100\n1\n50",     "expected": "100" }
     ]
   },
   "Q8": {
@@ -150,14 +150,14 @@
     ]
   },
 "Q16": {
-  "title": "Print Even Numbers from 1 to N",
-  "description": "Read a number N using 🎤. Print all even numbers from 1 to N, one per line.\n\nExample:\nInput:\n6\n\nOutput:\n2\n4\n6",
-  "expected": "2\n4\n6",
-  "test_cases": [
-    { "input": "6", "expected": "2\n4\n6" },
-    { "input": "5", "expected": "2\n4" },
-    { "input": "2", "expected": "2" }
-  ]
+    "title": "Largest of Three",
+    "description": "Read three numbers A, B and C using 🎤 one by one. Print the largest of the three.\n\nExample:\nInput:  3\n        7\n        5\nOutput: 7",
+    "expected": "7",
+    "test_cases": [
+      { "input": "3\n7\n5",    "expected": "7"  },
+      { "input": "10\n4\n8",   "expected": "10" },
+      { "input": "1\n1\n1",    "expected": "1"  }
+    ]
   },
   "Q17": {
     "title": "Prime Check",
