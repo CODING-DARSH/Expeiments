@@ -12,7 +12,7 @@ window.HC_CONFIG = {
   // ── BACKEND ───────────────────────────────────────────────────────
   IS_LOCAL:false,
   BASE_URL_LOCAL:  'http://localhost:5000',
-  BASE_URL_DEPLOY: 'https://hackandcrack.onrender.com',
+  BASE_URL_DEPLOY: 'https://hackndcrack.onrender.com',
 
   // ── SECRETS ───────────────────────────────────────────────────────
   JUDGE_SECRET:   'turingtech12',
