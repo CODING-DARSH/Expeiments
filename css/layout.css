@@ -106,6 +106,7 @@ body {
   background: var(--surface2);
 }
 .btn-run {
+  display: none;
   background: var(--accent);
   color: white;
   box-shadow: var(--glow-accent);

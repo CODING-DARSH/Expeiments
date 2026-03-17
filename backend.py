@@ -1079,12 +1079,12 @@ import subprocess, tempfile, os, json, requests as req_lib
 from datetime import datetime
 import random
 import hmac, hashlib, re
-
+from time import time
 load_dotenv()
 
 app = Flask(__name__, static_folder='.')
 CORS(app, origins=['*'])
-
+CACHE = {"data": [], "last": 0}
 JUDGE_SECRET   = os.environ.get('JUDGE_SECRET', 'judge123')
 ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'admin123')
 COMPILE_SECRET = os.environ.get('COMPILE_SECRET', 'emojilang-secret-change-me')
@@ -1546,6 +1546,9 @@ def get_questions():
     response.headers['Cache-Control'] = 'no-store'
     return response
 
+from time import time
+
+LAST_SUBMIT = {}
 # ── SUBMIT ────────────────────────────────────────────────────────────
 @app.route('/submit', methods=['POST'])
 def submit_code():
@@ -1556,14 +1559,18 @@ def submit_code():
     code       = data.get('code', '')
     token      = data.get('token', '')
     start_time = data.get('startTime', None)
-
+    now = time()
+    LAST_SUBMIT.update({k: v for k, v in LAST_SUBMIT.items() if now - v < 60})
+    
     if not name:
         return jsonify({'success': False, 'error': 'Team name required'})
     if not qid:
         return jsonify({'success': False, 'error': 'No question selected'})
     if len(code) > 5000:
         return jsonify({'success': False, 'error': 'Code too large'})
-
+    if roll in LAST_SUBMIT and now - LAST_SUBMIT[roll] < 5:
+        return jsonify({'success': False, 'error': 'Too many requests. Wait 5s.'})
+    
     # ── Verify HMAC token ─────────────────────────────────────────────
     # Reject anything that didn't come through /compile on this server
     if not token:
@@ -1571,7 +1578,7 @@ def submit_code():
     expected_token = make_token(code)
     if not hmac.compare_digest(expected_token, token):
         return jsonify({'success': False, 'error': 'Invalid submission — please use the EmojiLang IDE'})
-
+    LAST_SUBMIT[roll] = now
     questions = load_questions()
     if qid not in questions:
         return jsonify({'success': False, 'error': 'Invalid question'})
@@ -1615,7 +1622,8 @@ def submit_code():
             entry['aiFlagged']  = ai_review.get('flag', False)
             entry['aiReason']   = ai_review.get('reason', '')
         save_submission(entry)
-
+        CACHE["data"] = load_submissions()
+        CACHE["last"] = time()
     return jsonify({
         'success':      True,
         'passed':       all_passed,
@@ -1623,11 +1631,16 @@ def submit_code():
         'timeTaken':    time_taken,
         'ai_review':    ai_review,
     })
-
 # ── LEADERBOARD ───────────────────────────────────────────────────────
 @app.route('/leaderboard', methods=['GET'])
 def leaderboard():
-    return jsonify(load_submissions())
+    now = time()
+
+    if now - CACHE["last"] > 3:
+        CACHE["data"] = load_submissions()
+        CACHE["last"] = now
+
+    return jsonify(CACHE["data"])
 
 @app.route('/clear', methods=['POST'])
 def clear_leaderboard():
@@ -1636,6 +1649,8 @@ def clear_leaderboard():
         return jsonify({'success': False, 'error': 'Invalid secret'})
     with open('submissions.json', 'w', encoding='utf-8') as f:
         json.dump([], f)
+    CACHE["data"] = []
+    CACHE["last"] = time()
     return jsonify({'success': True})
 
 # ── ADMIN VERIFY ──────────────────────────────────────────────────────

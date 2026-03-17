@@ -59,11 +59,6 @@ window.EmojiEditor = (function () {
       onEditorChange();
     }
 
-    // Ctrl/Cmd + Enter → Run
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-      e.preventDefault();
-      document.getElementById('btn-run').click();
-    }
   }
 
   function insertAtCursor(text) {

@@ -12,7 +12,7 @@
   if (!session) { window.location.href = '/login.html'; return; }
   window.HC_SESSION = session;
   // TEMP: disable tab detection for testing
-  const DISABLE_TAB_DETECTION = true;
+  const DISABLE_TAB_DETECTION = false;
   const SB_URL = HC_CONFIG.SUPABASE_URL;
   const SB_KEY = HC_CONFIG.SUPABASE_KEY;
   const MAX_SWITCHES = 3;
@@ -38,17 +38,17 @@
   }
 
   // ── DISABLE COPY / PASTE / CUT ──────────────────────────────────
-  // ['copy','paste','cut'].forEach(evt =>
-  //   document.addEventListener(evt, e => { e.preventDefault(); showNoCopyToast(); })
-  // );
-  // document.addEventListener('contextmenu', e => e.preventDefault());
-  // document.addEventListener('keydown', e => {
-  //   const ctrl = e.ctrlKey || e.metaKey;
-  //   if (ctrl && ['c','v','x'].includes(e.key.toLowerCase())) {
-  //     e.preventDefault();
-  //     showNoCopyToast();
-  //   }
-  // });
+  ['copy','paste','cut'].forEach(evt =>
+    document.addEventListener(evt, e => { e.preventDefault(); showNoCopyToast(); })
+  );
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    const ctrl = e.ctrlKey || e.metaKey;
+    if (ctrl && ['c','v','x'].includes(e.key.toLowerCase())) {
+      e.preventDefault();
+      showNoCopyToast();
+    }
+  });
 
   function showNoCopyToast() {
     const id = 'no-copy-toast';

@@ -4,9 +4,9 @@
     "description": "Read a number N using 🎤. Print the multiplication table of N from 1 to 5, one result per line.\n\nExample:\nInput:  3\nOutput: 3\n        6\n        9\n        12\n        15",
     "expected": "3\n6\n9\n12\n15",
     "test_cases": [
-      { "input": "3", "expected": "3\n6\n9\n12\n15"    },
-      { "input": "5", "expected": "5\n10\n15\n20\n25"  },
-      { "input": "7", "expected": "7\n14\n21\n28\n35"  }
+      { "input": "3", "expected": "3\n6\n9\n12\n15"   },
+      { "input": "5", "expected": "5\n10\n15\n20\n25" },
+      { "input": "7", "expected": "7\n14\n21\n28\n35" }
     ]
   },
   "Q2": {
@@ -24,9 +24,9 @@
     "description": "Read N using 🎤, then read N numbers. Print the sum of all numbers.\n\nExample:\nInput:  4\n        1\n        2\n        3\n        4\nOutput: 10",
     "expected": "10",
     "test_cases": [
-      { "input": "4\n1\n2\n3\n4",    "expected": "10" },
-      { "input": "3\n10\n20\n30",    "expected": "60" },
-      { "input": "5\n5\n5\n5\n5\n5","expected": "30" }
+      { "input": "4\n1\n2\n3\n4",     "expected": "10" },
+      { "input": "3\n10\n20\n30",     "expected": "60" },
+      { "input": "5\n5\n5\n5\n5\n5", "expected": "30" }
     ]
   },
   "Q4": {
@@ -70,13 +70,13 @@
     ]
   },
   "Q8": {
-    "title": "Second Largest",
-    "description": "Read N using 🎤, then read N numbers. Print the second largest number. All numbers are distinct.\n\nTip: Sort the list using 🔃 then access by index\n\nExample:\nInput:  5\n        3\n        8\n        2\n        7\n        5\nOutput: 7",
-    "expected": "7",
+    "title": "Two Sum Exists",
+    "description": "Read N using 🎤, then read N numbers. Then read a target number T.\nPrint Yes if any two distinct numbers in the list add up to T, otherwise print No.\n\nTip: Use a dictionary 🗂️ to store numbers you have seen. For each number x, check if (T - x) is already in the dict.\n\nExample:\nInput:  5\n        2\n        7\n        11\n        15\n        3\n        9\nOutput: Yes\n(2 + 7 = 9)",
+    "expected": "Yes",
     "test_cases": [
-      { "input": "5\n3\n8\n2\n7\n5",  "expected": "7"  },
-      { "input": "4\n10\n40\n20\n30", "expected": "30" },
-      { "input": "3\n100\n1\n50",     "expected": "50" }
+      { "input": "5\n2\n7\n11\n15\n3\n9",  "expected": "Yes" },
+      { "input": "4\n1\n5\n3\n7\n10",       "expected": "No"  },
+      { "input": "5\n4\n6\n1\n9\n2\n10",    "expected": "Yes" }
     ]
   },
   "Q9": {
@@ -86,17 +86,17 @@
     "test_cases": [
       { "input": "4\n-2\n0\n1\n3",  "expected": "0\n1\n4\n9"  },
       { "input": "3\n-3\n-1\n2",    "expected": "1\n4\n9"      },
-      { "input": "4\n-4\n-1\n0\n2", "expected": "0\n1\n4\n16" } 
+      { "input": "4\n-4\n-1\n0\n2", "expected": "0\n1\n4\n16" }
     ]
   },
   "Q10": {
-    "title": "Missing Number",
-    "description": "Read N using 🎤, then read N numbers. The numbers are from 1 to N+1 but exactly one is missing. Find and print the missing number.\n\nTip: Expected sum of 1 to N+1 is (N+1)*(N+2)/2. Subtract actual sum.\n\nExample:\nInput:  4\n        1\n        2\n        4\n        5\nOutput: 3",
+    "title": "Binary Search",
+    "description": "Read N using 🎤, then read N numbers in sorted ascending order. Then read a target T.\nPrint the index (0-based) where T is found, or -1 if not found.\nYou must implement binary search — do NOT use list find or loop through all elements.\n\nTip: Use low 📦 0, high 📦 N-1, mid 📦 (low ➕ high) 🔢 2. Loop while low 🔛 high.\n\nExample:\nInput:  6\n        1\n        3\n        5\n        7\n        9\n        11\n        7\nOutput: 3",
     "expected": "3",
     "test_cases": [
-      { "input": "4\n1\n2\n4\n5",    "expected": "3" },
-      { "input": "5\n1\n2\n3\n4\n6", "expected": "5" },
-      { "input": "3\n2\n3\n4",        "expected": "1" }
+      { "input": "6\n1\n3\n5\n7\n9\n11\n7",   "expected": "3"  },
+      { "input": "5\n2\n4\n6\n8\n10\n6",       "expected": "2"  },
+      { "input": "4\n10\n20\n30\n40\n50",       "expected": "-1" }
     ]
   },
   "Q11": {
@@ -150,13 +150,13 @@
     ]
   },
   "Q16": {
-    "title": "Double Exists",
-    "description": "Read N using 🎤, then read N numbers. Check if any number's double also exists in the array. Print Yes or No.\n\nExample:\nInput:  5\n        2\n        4\n        5\n        8\n        10\nOutput: Yes\n(4 is double of 2)",
-    "expected": "Yes",
+    "title": "Longest Consecutive Sequence",
+    "description": "Read N using 🎤, then read N numbers. Find the length of the longest sequence of consecutive integers in the list. Order does not matter.\n\nTip: Store all numbers in a dict 🗂️. For each number, check if (number - 1) is NOT in the dict — that means it is the start of a sequence. Then count how far the sequence goes.\n\nExample:\nInput:  8\n        100\n        4\n        200\n        1\n        3\n        2\n        5\n        101\nOutput: 5\n(1,2,3,4,5 is the longest consecutive sequence)",
+    "expected": "5",
     "test_cases": [
-      { "input": "5\n2\n4\n5\n8\n10", "expected": "Yes" },
-      { "input": "4\n1\n3\n7\n11",    "expected": "No"  },
-      { "input": "3\n3\n6\n9",        "expected": "Yes" }
+      { "input": "8\n100\n4\n200\n1\n3\n2\n5\n101", "expected": "5" },
+      { "input": "4\n10\n5\n3\n11",                  "expected": "2" },
+      { "input": "6\n1\n2\n3\n4\n5\n6",              "expected": "6" }
     ]
   },
   "Q17": {
@@ -170,33 +170,33 @@
     ]
   },
   "Q18": {
-    "title": "List Average",
-    "description": "Read N using 🎤, then read N numbers. Print the average rounded to 1 decimal place.\n\nTip: Use 🔵 to round\n\nExample:\nInput:  4\n        10\n        20\n        30\n        40\nOutput: 25.0",
-    "expected": "25.0",
+    "title": "majority Element",
+    "description": "Read N using 🎤, then read N numbers. Find the element that appears more than N/2 times and print it. It is guaranteed that such an element always exists.\n\nTip: Use a dictionary 🗂️ to count frequency of each number. Then find which key has count greater than N // 2.\n\nExample:\nInput:  7\n        3\n        2\n        3\n        1\n        3\n        4\n        3\nOutput: 3",
+    "expected": "3",
     "test_cases": [
-      { "input": "4\n10\n20\n30\n40", "expected": "25.0" },
-      { "input": "3\n1\n2\n3",        "expected": "2.0"  },
-      { "input": "5\n1\n2\n3\n4\n5", "expected": "3.0"  }
+      { "input": "7\n3\n2\n3\n1\n3\n4\n3", "expected": "3" },
+      { "input": "5\n1\n1\n2\n1\n1",        "expected": "1" },
+      { "input": "6\n4\n4\n2\n4\n4\n1",     "expected": "4" }
     ]
   },
   "Q19": {
-    "title": "Word Count",
-    "description": "Read a string using 🎤. Count how many words it contains (words are separated by spaces).\n\nExample:\nInput:  Hello World how are you\nOutput: 5",
-    "expected": "5",
+    "title": "Run Length Encoding",
+    "description": "Read a string using 🎤. Compress it using run-length encoding — for each group of consecutive identical characters, print the count followed by the character, all on one line.\n\nExample:\nInput:  AAABBC\nOutput: 3A2B1C\n\nInput:  AABAA\nOutput: 2A1B2A",
+    "expected": "3A2B1C",
     "test_cases": [
-      { "input": "Hello World how are you", "expected": "5" },
-      { "input": "one",                     "expected": "1" },
-      { "input": "a b c d e f",             "expected": "6" }
+      { "input": "AAABBC",  "expected": "3A2B1C"  },
+      { "input": "AABAA",   "expected": "2A1B2A"  },
+      { "input": "ABCDDDD", "expected": "1A1B1C4D" }
     ]
   },
   "Q20": {
-    "title": "Sort and Print",
-    "description": "Read N using 🎤, then read N numbers. Print them in ascending order, one per line.\n\nTip: Use 🔃 to sort the list\n\nExample:\nInput:  5\n        3\n        1\n        4\n        1\n        5\nOutput: 1\n        1\n        3\n        4\n        5",
-    "expected": "1\n1\n3\n4\n5",
+    "title": "Valid Parentheses",
+    "description": "Read a string using 🎤 containing only ( and ) characters. Print Yes if the parentheses are valid (every opening bracket has a matching closing bracket in the right order), otherwise print No.\n\nTip: Use a counter starting at 0. Add 1 for ( and subtract 1 for ). If counter ever goes below 0, it is invalid. At the end it must be 0.\n\nExample:\nInput:  (())\nOutput: Yes\n\nInput:  )(\nOutput: No\n\nInput:  (()\nOutput: No",
+    "expected": "Yes",
     "test_cases": [
-      { "input": "5\n3\n1\n4\n1\n5",  "expected": "1\n1\n3\n4\n5"  },
-      { "input": "4\n40\n10\n30\n20", "expected": "10\n20\n30\n40"  },
-      { "input": "3\n9\n2\n7",        "expected": "2\n7\n9"         }
+      { "input": "(())",   "expected": "Yes" },
+      { "input": ")(",     "expected": "No"  },
+      { "input": "(()",    "expected": "No"  }
     ]
   }
 }

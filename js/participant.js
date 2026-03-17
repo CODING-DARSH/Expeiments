@@ -6,6 +6,7 @@ window.EmojiParticipant = (function () {
   let _startTime = null;
   let _questions = {};
   let _submitted = {};
+  let _submitLocked = false;
 
   function init() {
     if (window.HC_SESSION) {
@@ -130,7 +131,16 @@ window.EmojiParticipant = (function () {
     document.getElementById('q-info-desc').textContent  = q.description;
 
     window.EmojiEditor.clear();
-
+    window.EmojiEditor.setValue(
+    `# Example Input/Output:
+        
+    # Read input
+    n 📦 🔢➡️ ( 🎤 "" )
+        
+    # Print output
+    📢 n
+    `
+    );
     const isSolved = !!_submitted[qid];
 
     if (isSolved) {
@@ -148,6 +158,8 @@ window.EmojiParticipant = (function () {
   }
 
   async function handleSubmit() {
+    if (_submitLocked) return;
+    _submitLocked = true;
     if (!_currentQ) { window.EmojiUI.showToast('Select a question first!', 'error'); return; }
     if (_submitted[_currentQ]) { window.EmojiUI.showToast('Already solved! Pick another.', 'info'); return; }
 
@@ -164,7 +176,20 @@ window.EmojiParticipant = (function () {
 
     const submitBtn = document.getElementById('btn-submit');
     submitBtn.disabled    = true;
-    submitBtn.textContent = '⏳ Submitting...';
+    window.EmojiUI.showSubmitting();
+    let timeLeft = 7  ;
+    submitBtn.textContent = `⏳ ${timeLeft}s`;
+
+    const cooldown = setInterval(() => {
+      timeLeft--;
+      if (timeLeft > 0) {
+        submitBtn.textContent = `⏳ ${timeLeft}s`;
+      } else {
+        clearInterval(cooldown);
+        submitBtn.textContent = '📤 Submit';
+        // don't enable here — your existing logic will handle it
+      }
+    }, 1000);
 
     const safetyTimer = setTimeout(() => {
       if (!_submitted[_currentQ]) {
@@ -174,8 +199,6 @@ window.EmojiParticipant = (function () {
         window.EmojiUI.showToast('Submission timed out — try again', 'error');
       }
     }, 10000);
-
-    window.EmojiUI.showSubmitting();
 
     try {
       // ── Step 1: Send emoji source to server for compilation ────────
@@ -297,6 +320,7 @@ window.EmojiParticipant = (function () {
       submitBtn.style.background = '';
     } finally {
       clearTimeout(safetyTimer);
+      _submitLocked = false;
     }
   }
 

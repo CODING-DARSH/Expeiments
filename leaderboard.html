@@ -312,7 +312,9 @@
       const avgAiScore = p.avgAiScore || 0;
 
       // Build question chips — show all questions, solved ones highlighted
-      const allQids = Array.from({length: totalQuestions}, (_, i) => `Q${i+1}`);
+      const allQids = totalQuestions > 0
+      ? Array.from({length: totalQuestions}, (_, i) => `Q${i+1}`)
+      : Object.keys(p.solved);
       const chips   = allQids.map(qid =>
         solvedKeys.includes(qid)
           ? `<span class="q-chip" title="${p.solved[qid].time || 0}s">${qid} ✓</span>`
@@ -375,9 +377,13 @@
   }
 
   // ── START ────────────────────────────────────────────────────────
-  fetchQuestionCount();
-  fetchLeaderboard();
-  setInterval(fetchLeaderboard, 5000);
+  async function init() {
+  await fetchQuestionCount();   // wait FIRST
+  await fetchLeaderboard();     // then render
+  setInterval(fetchLeaderboard, 10000);
+}
+
+init();
 </script>
 </body>
 </html>
