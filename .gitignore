@@ -1,0 +1,30 @@
+# Environment variables — NEVER push to GitHub
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.py[cod]
+venv/
+env/
+.venv/
+
+# Node
+node_modules/
+
+# Data files
+submissions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Deploy
+.vercel
+
+ai_config.json

@@ -1,0 +1,202 @@
+{
+  "Q1": {
+    "title": "Multiplication Table",
+    "description": "Read a number N using 🎤. Print the multiplication table of N from 1 to 5, one result per line.\n\nExample:\nInput:  3\nOutput: 3\n        6\n        9\n        12\n        15",
+    "expected": "3\n6\n9\n12\n15",
+    "test_cases": [
+      { "input": "3", "expected": "3\n6\n9\n12\n15"    },
+      { "input": "5", "expected": "5\n10\n15\n20\n25"  },
+      { "input": "7", "expected": "7\n14\n21\n28\n35"  }
+    ]
+  },
+  "Q2": {
+    "title": "Even or Odd",
+    "description": "Read a number N using 🎤. Print Even if it is even, or Odd if it is odd.\n\nExample:\nInput:  4\nOutput: Even\n\nInput:  7\nOutput: Odd",
+    "expected": "Even",
+    "test_cases": [
+      { "input": "4", "expected": "Even" },
+      { "input": "7", "expected": "Odd"  },
+      { "input": "0", "expected": "Even" }
+    ]
+  },
+  "Q3": {
+    "title": "Sum of Numbers",
+    "description": "Read N using 🎤, then read N numbers. Print the sum of all numbers.\n\nExample:\nInput:  4\n        1\n        2\n        3\n        4\nOutput: 10",
+    "expected": "10",
+    "test_cases": [
+      { "input": "4\n1\n2\n3\n4",    "expected": "10" },
+      { "input": "3\n10\n20\n30",    "expected": "60" },
+      { "input": "5\n5\n5\n5\n5\n5","expected": "30" }
+    ]
+  },
+  "Q4": {
+    "title": "Count Even Numbers",
+    "description": "Read N using 🎤, then read N numbers. Print the count of even numbers.\n\nExample:\nInput:  6\n        1\n        2\n        3\n        4\n        5\n        6\nOutput: 3",
+    "expected": "3",
+    "test_cases": [
+      { "input": "6\n1\n2\n3\n4\n5\n6", "expected": "3" },
+      { "input": "4\n2\n4\n6\n8",        "expected": "4" },
+      { "input": "5\n1\n3\n5\n7\n9",     "expected": "0" }
+    ]
+  },
+  "Q5": {
+    "title": "Factorial",
+    "description": "Read a number N using 🎤, print its factorial.\nRemember: 0! = 1\n\nExample:\nInput:  5\nOutput: 120",
+    "expected": "120",
+    "test_cases": [
+      { "input": "5", "expected": "120" },
+      { "input": "6", "expected": "720" },
+      { "input": "0", "expected": "1"   }
+    ]
+  },
+  "Q6": {
+    "title": "Reverse String",
+    "description": "Read a string using 🎤, print it reversed.\n\nTip: Convert string to list, reverse using ↩️, then join with 🧩\n\nExample:\nInput:  HELLO\nOutput: OLLEH",
+    "expected": "OLLEH",
+    "test_cases": [
+      { "input": "HELLO",   "expected": "OLLEH"   },
+      { "input": "python",  "expected": "nohtyp"  },
+      { "input": "racecar", "expected": "racecar" }
+    ]
+  },
+  "Q7": {
+    "title": "Find Maximum",
+    "description": "Read N using 🎤, then read N numbers. Print the maximum value.\n\nTip: Use 🔺 to find max of a list\n\nExample:\nInput:  5\n        3\n        8\n        2\n        7\n        5\nOutput: 8",
+    "expected": "8",
+    "test_cases": [
+      { "input": "5\n3\n8\n2\n7\n5",  "expected": "8"   },
+      { "input": "4\n10\n40\n20\n30", "expected": "40"  },
+      { "input": "3\n100\n1\n50",     "expected": "100" }
+    ]
+  },
+  "Q8": {
+    "title": "Second Largest",
+    "description": "Read N using 🎤, then read N numbers. Print the second largest number. All numbers are distinct.\n\nTip: Sort the list using 🔃 then access by index\n\nExample:\nInput:  5\n        3\n        8\n        2\n        7\n        5\nOutput: 7",
+    "expected": "7",
+    "test_cases": [
+      { "input": "5\n3\n8\n2\n7\n5",  "expected": "7"  },
+      { "input": "4\n10\n40\n20\n30", "expected": "30" },
+      { "input": "3\n100\n1\n50",     "expected": "50" }
+    ]
+  },
+  "Q9": {
+    "title": "Squares of Sorted Array",
+    "description": "Read N using 🎤, then read N numbers (may have negatives). Print the square of each number in sorted order, one per line.\n\nTip: Square each number using 🌟 2, sort using 🗃️\n\nExample:\nInput:  4\n        -2\n        0\n        1\n        3\nOutput: 0\n        1\n        4\n        9",
+    "expected": "0\n1\n4\n9",
+    "test_cases": [
+      { "input": "4\n-2\n0\n1\n3",  "expected": "0\n1\n4\n9"  },
+      { "input": "3\n-3\n-1\n2",    "expected": "1\n4\n9"      },
+      { "input": "4\n-4\n-1\n0\n2", "expected": "0\n1\n4\n16" } 
+    ]
+  },
+  "Q10": {
+    "title": "Missing Number",
+    "description": "Read N using 🎤, then read N numbers. The numbers are from 1 to N+1 but exactly one is missing. Find and print the missing number.\n\nTip: Expected sum of 1 to N+1 is (N+1)*(N+2)/2. Subtract actual sum.\n\nExample:\nInput:  4\n        1\n        2\n        4\n        5\nOutput: 3",
+    "expected": "3",
+    "test_cases": [
+      { "input": "4\n1\n2\n4\n5",    "expected": "3" },
+      { "input": "5\n1\n2\n3\n4\n6", "expected": "5" },
+      { "input": "3\n2\n3\n4",        "expected": "1" }
+    ]
+  },
+  "Q11": {
+    "title": "Count Digits",
+    "description": "Read a number N using 🎤. Print the number of digits in it.\n\nExample:\nInput:  12345\nOutput: 5",
+    "expected": "5",
+    "test_cases": [
+      { "input": "12345", "expected": "5" },
+      { "input": "7",     "expected": "1" },
+      { "input": "1000",  "expected": "4" }
+    ]
+  },
+  "Q12": {
+    "title": "Count Vowels",
+    "description": "Read a string using 🎤. Print the number of vowels (a, e, i, o, u — both upper and lower case).\n\nExample:\nInput:  Hello World\nOutput: 3",
+    "expected": "3",
+    "test_cases": [
+      { "input": "Hello World", "expected": "3" },
+      { "input": "aeiou",       "expected": "5" },
+      { "input": "rhythm",      "expected": "0" }
+    ]
+  },
+  "Q13": {
+    "title": "Sum of Digits",
+    "description": "Read a number N using 🎤. Print the sum of its digits.\n\nExample:\nInput:  1234\nOutput: 10",
+    "expected": "10",
+    "test_cases": [
+      { "input": "1234", "expected": "10" },
+      { "input": "999",  "expected": "27" },
+      { "input": "100",  "expected": "1"  }
+    ]
+  },
+  "Q14": {
+    "title": "Palindrome Check",
+    "description": "Read a string using 🎤. Print Yes if it is a palindrome, otherwise print No. (Case sensitive)\n\nExample:\nInput:  racecar\nOutput: Yes\n\nInput:  hello\nOutput: No",
+    "expected": "Yes",
+    "test_cases": [
+      { "input": "racecar", "expected": "Yes" },
+      { "input": "hello",   "expected": "No"  },
+      { "input": "madam",   "expected": "Yes" }
+    ]
+  },
+  "Q15": {
+    "title": "Fibonacci Series",
+    "description": "Read N using 🎤. Print the first N Fibonacci numbers, one per line, starting from 0.\n\nExample:\nInput:  6\nOutput: 0\n        1\n        1\n        2\n        3\n        5",
+    "expected": "0\n1\n1\n2\n3\n5",
+    "test_cases": [
+      { "input": "6", "expected": "0\n1\n1\n2\n3\n5"        },
+      { "input": "8", "expected": "0\n1\n1\n2\n3\n5\n8\n13" },
+      { "input": "3", "expected": "0\n1\n1"                 }
+    ]
+  },
+  "Q16": {
+    "title": "Double Exists",
+    "description": "Read N using 🎤, then read N numbers. Check if any number's double also exists in the array. Print Yes or No.\n\nExample:\nInput:  5\n        2\n        4\n        5\n        8\n        10\nOutput: Yes\n(4 is double of 2)",
+    "expected": "Yes",
+    "test_cases": [
+      { "input": "5\n2\n4\n5\n8\n10", "expected": "Yes" },
+      { "input": "4\n1\n3\n7\n11",    "expected": "No"  },
+      { "input": "3\n3\n6\n9",        "expected": "Yes" }
+    ]
+  },
+  "Q17": {
+    "title": "Prime Check",
+    "description": "Read a number N using 🎤. Print Yes if it is prime, otherwise print No.\n\nExample:\nInput:  7\nOutput: Yes\n\nInput:  9\nOutput: No",
+    "expected": "Yes",
+    "test_cases": [
+      { "input": "7",  "expected": "Yes" },
+      { "input": "9",  "expected": "No"  },
+      { "input": "13", "expected": "Yes" }
+    ]
+  },
+  "Q18": {
+    "title": "List Average",
+    "description": "Read N using 🎤, then read N numbers. Print the average rounded to 1 decimal place.\n\nTip: Use 🔵 to round\n\nExample:\nInput:  4\n        10\n        20\n        30\n        40\nOutput: 25.0",
+    "expected": "25.0",
+    "test_cases": [
+      { "input": "4\n10\n20\n30\n40", "expected": "25.0" },
+      { "input": "3\n1\n2\n3",        "expected": "2.0"  },
+      { "input": "5\n1\n2\n3\n4\n5", "expected": "3.0"  }
+    ]
+  },
+  "Q19": {
+    "title": "Word Count",
+    "description": "Read a string using 🎤. Count how many words it contains (words are separated by spaces).\n\nExample:\nInput:  Hello World how are you\nOutput: 5",
+    "expected": "5",
+    "test_cases": [
+      { "input": "Hello World how are you", "expected": "5" },
+      { "input": "one",                     "expected": "1" },
+      { "input": "a b c d e f",             "expected": "6" }
+    ]
+  },
+  "Q20": {
+    "title": "Sort and Print",
+    "description": "Read N using 🎤, then read N numbers. Print them in ascending order, one per line.\n\nTip: Use 🔃 to sort the list\n\nExample:\nInput:  5\n        3\n        1\n        4\n        1\n        5\nOutput: 1\n        1\n        3\n        4\n        5",
+    "expected": "1\n1\n3\n4\n5",
+    "test_cases": [
+      { "input": "5\n3\n1\n4\n1\n5",  "expected": "1\n1\n3\n4\n5"  },
+      { "input": "4\n40\n10\n30\n20", "expected": "10\n20\n30\n40"  },
+      { "input": "3\n9\n2\n7",        "expected": "2\n7\n9"         }
+    ]
+  }
+}
