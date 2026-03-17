@@ -20,23 +20,23 @@
     ]
   },
   "Q3": {
-    "title": "Sum of Numbers",
-    "description": "Read N using 🎤, then read N numbers. Print the sum of all numbers.\n\nExample:\nInput:  4\n        1\n        2\n        3\n        4\nOutput: 10",
-    "expected": "10",
+    "title": "Square of a Number",
+    "description": "Read a number N using 🎤 and print its square.\n\nExample:\nInput:\n4\n\nOutput:\n16",
+    "expected": "16",
     "test_cases": [
-      { "input": "4\n1\n2\n3\n4",     "expected": "10" },
-      { "input": "3\n10\n20\n30",     "expected": "60" },
-      { "input": "5\n5\n5\n5\n5\n5", "expected": "30" }
+      { "input": "4", "expected": "16" },
+      { "input": "5", "expected": "25" },
+      { "input": "10", "expected": "100" }
     ]
   },
   "Q4": {
-    "title": "Count Even Numbers",
-    "description": "Read N using 🎤, then read N numbers. Print the count of even numbers.\n\nExample:\nInput:  6\n        1\n        2\n        3\n        4\n        5\n        6\nOutput: 3",
-    "expected": "3",
+    "title": "Number Type",
+    "description": "Read a number N using 🎤.\nPrint:\n\"Positive\" if N > 0\n\"Negative\" if N < 0\n\"Zero\" if N == 0\n\nExample:\nInput:\n-5\n\nOutput:\nNegative",
+    "expected": "Negative",
     "test_cases": [
-      { "input": "6\n1\n2\n3\n4\n5\n6", "expected": "3" },
-      { "input": "4\n2\n4\n6\n8",        "expected": "4" },
-      { "input": "5\n1\n3\n5\n7\n9",     "expected": "0" }
+      { "input": "-5", "expected": "Negative" },
+      { "input": "10", "expected": "Positive" },
+      { "input": "0", "expected": "Zero" }
     ]
   },
   "Q5": {
@@ -59,19 +59,19 @@
       { "input": "racecar", "expected": "racecar" }
     ]
   },
-  "Q7": {
-    "title": "Find Maximum",
-    "description": "Read N using 🎤, then read N numbers. Print the maximum value.\n\nTip: Use 🔺 to find max of a list\n\nExample:\nInput:  5\n        3\n        8\n        2\n        7\n        5\nOutput: 8",
-    "expected": "8",
+ "Q7": {
+    "title": "Multiply by 2",
+    "description": "Read a number N using 🎤 and print N * 2.\n\nExample:\nInput:\n6\n\nOutput:\n12",
+    "expected": "12",
     "test_cases": [
-      { "input": "5\n3\n8\n2\n7\n5",  "expected": "8"   },
-      { "input": "4\n10\n40\n20\n30", "expected": "40"  },
-      { "input": "3\n100\n1\n50",     "expected": "100" }
+      { "input": "6", "expected": "12" },
+      { "input": "3", "expected": "6" },
+      { "input": "10", "expected": "20" }
     ]
   },
   "Q8": {
     "title": "Two Sum Exists",
-    "description": "Read N using 🎤, then read N numbers. Then read a target number T.\nPrint Yes if any two distinct numbers in the list add up to T, otherwise print No.\n\nTip: Use a dictionary 🗂️ to store numbers you have seen. For each number x, check if (T - x) is already in the dict.\n\nExample:\nInput:  5\n        2\n        7\n        11\n        15\n        3\n        9\nOutput: Yes\n(2 + 7 = 9)",
+    "description": "Read N using 🎤 (this tells how many numbers you will enter) Then \n Use 🎤 again N times to enter the numbers one by one. Then read a target number T.\nPrint Yes if any two distinct numbers in the list add up to T, otherwise print No.\n\nTip: Use a dictionary 🗂️ to store numbers you have seen. For each number x, check if (T - x) is already in the dict.\n\nExample:\nInput:  5\n        2\n        7\n        11\n        15\n        3\n        9\nOutput: Yes\n(2 + 7 = 9)",
     "expected": "Yes",
     "test_cases": [
       { "input": "5\n2\n7\n11\n15\n3\n9",  "expected": "Yes" },
@@ -81,7 +81,7 @@
   },
   "Q9": {
     "title": "Squares of Sorted Array",
-    "description": "Read N using 🎤, then read N numbers (may have negatives). Print the square of each number in sorted order, one per line.\n\nTip: Square each number using 🌟 2, sort using 🗃️\n\nExample:\nInput:  4\n        -2\n        0\n        1\n        3\nOutput: 0\n        1\n        4\n        9",
+    "description": "Read N using 🎤 (this tells how many numbers you will enter) Then \n Use 🎤 again N times to enter the numbers one by one (may have negatives). Print the square of each number in sorted order, one per line.\n\nTip: Square each number using 🌟 2, sort using 🗃️\n\nExample:\nInput:  4\n        -2\n        0\n        1\n        3\nOutput: 0\n        1\n        4\n        9",
     "expected": "0\n1\n4\n9",
     "test_cases": [
       { "input": "4\n-2\n0\n1\n3",  "expected": "0\n1\n4\n9"  },
@@ -91,7 +91,7 @@
   },
   "Q10": {
     "title": "Binary Search",
-    "description": "Read N using 🎤, then read N numbers in sorted ascending order. Then read a target T.\nPrint the index (0-based) where T is found, or -1 if not found.\nYou must implement binary search — do NOT use list find or loop through all elements.\n\nTip: Use low 📦 0, high 📦 N-1, mid 📦 (low ➕ high) 🔢 2. Loop while low 🔛 high.\n\nExample:\nInput:  6\n        1\n        3\n        5\n        7\n        9\n        11\n        7\nOutput: 3",
+    "description": "Input format:\n, First input: N (number of elements)\n then read N numbers in sorted ascending order. Then read a target T.\nPrint the index (0-based) where T is found, or -1 if not found.\nYou must implement binary search — do NOT use list find or loop through all elements.\n\nTip: Use low 📦 0, high 📦 N-1, mid 📦 (low ➕ high) 🔢 2. Loop while low 🔛 high.\n\nExample:\nInput:  6\n        1\n        3\n        5\n        7\n        9\n        11\n        7\nOutput: 3",
     "expected": "3",
     "test_cases": [
       { "input": "6\n1\n3\n5\n7\n9\n11\n7",   "expected": "3"  },
@@ -149,15 +149,15 @@
       { "input": "3", "expected": "0\n1\n1"                 }
     ]
   },
-  "Q16": {
-    "title": "Longest Consecutive Sequence",
-    "description": "Read N using 🎤, then read N numbers. Find the length of the longest sequence of consecutive integers in the list. Order does not matter.\n\nTip: Store all numbers in a dict 🗂️. For each number, check if (number - 1) is NOT in the dict — that means it is the start of a sequence. Then count how far the sequence goes.\n\nExample:\nInput:  8\n        100\n        4\n        200\n        1\n        3\n        2\n        5\n        101\nOutput: 5\n(1,2,3,4,5 is the longest consecutive sequence)",
-    "expected": "5",
-    "test_cases": [
-      { "input": "8\n100\n4\n200\n1\n3\n2\n5\n101", "expected": "5" },
-      { "input": "4\n10\n5\n3\n11",                  "expected": "2" },
-      { "input": "6\n1\n2\n3\n4\n5\n6",              "expected": "6" }
-    ]
+"Q16": {
+  "title": "Print Even Numbers from 1 to N",
+  "description": "Read a number N using 🎤. Print all even numbers from 1 to N, one per line.\n\nExample:\nInput:\n6\n\nOutput:\n2\n4\n6",
+  "expected": "2\n4\n6",
+  "test_cases": [
+    { "input": "6", "expected": "2\n4\n6" },
+    { "input": "5", "expected": "2\n4" },
+    { "input": "2", "expected": "2" }
+  ]
   },
   "Q17": {
     "title": "Prime Check",
@@ -169,15 +169,15 @@
       { "input": "13", "expected": "Yes" }
     ]
   },
-  "Q18": {
-    "title": "majority Element",
-    "description": "Read N using 🎤, then read N numbers. Find the element that appears more than N/2 times and print it. It is guaranteed that such an element always exists.\n\nTip: Use a dictionary 🗂️ to count frequency of each number. Then find which key has count greater than N // 2.\n\nExample:\nInput:  7\n        3\n        2\n        3\n        1\n        3\n        4\n        3\nOutput: 3",
-    "expected": "3",
-    "test_cases": [
-      { "input": "7\n3\n2\n3\n1\n3\n4\n3", "expected": "3" },
-      { "input": "5\n1\n1\n2\n1\n1",        "expected": "1" },
-      { "input": "6\n4\n4\n2\n4\n4\n1",     "expected": "4" }
-    ]
+"Q18": {
+  "title": "Check Divisible by 5",
+  "description": "Read a number N using 🎤. Print Yes if it is divisible by 5, otherwise print No.\n\nExample:\nInput:\n25\n\nOutput:\nYes",
+  "expected": "Yes",
+  "test_cases": [
+    { "input": "25", "expected": "Yes" },
+    { "input": "14", "expected": "No" },
+    { "input": "0", "expected": "Yes" }
+  ]
   },
   "Q19": {
     "title": "Run Length Encoding",

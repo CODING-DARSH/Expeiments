@@ -180,17 +180,6 @@ window.EmojiParticipant = (function () {
     let timeLeft = 7  ;
     submitBtn.textContent = `⏳ ${timeLeft}s`;
 
-    const cooldown = setInterval(() => {
-      timeLeft--;
-      if (timeLeft > 0) {
-        submitBtn.textContent = `⏳ ${timeLeft}s`;
-      } else {
-        clearInterval(cooldown);
-        submitBtn.textContent = '📤 Submit';
-        // don't enable here — your existing logic will handle it
-      }
-    }, 1000);
-
     const safetyTimer = setTimeout(() => {
       if (!_submitted[_currentQ]) {
         submitBtn.disabled    = false;
